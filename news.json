@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "standards": {
+    "version": 2,
+    "updated": "2026-10-19",
+    "path": "community-standards.md"
+  },
+  "items": [
+    {
+      "id": "welcome",
+      "title": "Welcome to Solara Worlds",
+      "date": "2026-10-20",
+      "summary": "The Solara Worlds launcher is open. World of Warcraft 3.3.5a is the first client. Point it at the AzerothCore realm and press Play.",
+      "image": "images/welcome.png",
+      "link": "https://github.com/Solara-Worlds/public-news",
+      "games": ["wow-335a"]
+    }
+  ]
+}
