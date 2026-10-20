@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Solara-Worlds/public-news/schema/news.schema.json",
+  "title": "Solara Worlds news feed",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "standards", "items"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "standards": { "$ref": "standards-pointer.schema.json" },
+    "items": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "date", "summary"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$" },
+          "title": { "type": "string", "minLength": 1, "maxLength": 140 },
+          "date": { "type": "string", "format": "date" },
+          "summary": { "type": "string", "minLength": 1, "maxLength": 600 },
+          "image": { "type": "string", "pattern": "^images/[A-Za-z0-9][A-Za-z0-9._-]{0,80}\\.(png|jpe?g|webp)$" },
+          "link": { "type": "string", "pattern": "^https://[^\\s]+$" },
+          "games": {
+            "type": "array",
+            "maxItems": 12,
+            "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,63}$" }
+          }
+        }
+      }
+    }
+  }
+}
